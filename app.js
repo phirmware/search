@@ -4,7 +4,7 @@ var app = express();
 app.set('view engine', 'ejs');
 
 
-
+ 
 app.get('/',function(req,res){
     res.render('home');
 })
@@ -16,9 +16,9 @@ app.get('/result',function(req,res){
         var data = JSON.parse(body);
         res.render('index',{data:data});
     })
-})
+});
 
 
 app.listen(3000,function(){
     console.log('listening at port 3000');
-})
+});
