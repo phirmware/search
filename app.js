@@ -2,7 +2,7 @@ var express = require('express');
 var request = require('request');
 var app = express();
 app.set('view engine', 'ejs');
-
+app.use(express.static(__dirname + '/views'));
 
  
 app.get('/',function(req,res){
@@ -18,7 +18,10 @@ app.get('/result',function(req,res){
     })
 });
 
+app.get('/image',(req,res)=>{
+    res.render('image');
+});
 
-app.listen(3001,function(){
-    console.log('listening at port 3001');
+app.listen(3000,function(){
+    console.log('listening at port 3000');
 });
